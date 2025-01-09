@@ -166,9 +166,16 @@ function renderScoreboard() {
     return
   }
 
-  let p0x = 20
-  let p0y = 0
   sCtx.clearRect(0, 0, scoreboard.width, scoreboard.height)
+
+  sCtx.lineWidth = 1;
+  sCtx.strokeStyle = "black"
+  sCtx.beginPath();
+  sCtx.moveTo(0, 250);
+  sCtx.lineTo(500, 250);
+  // Draw the Path
+  sCtx.stroke();
+
   let prevColor = undefined
   let p0c = byColor(p0)
   p0c.forEach((pieces, ci) => {
@@ -233,12 +240,6 @@ function renderScoreboard() {
       sCtx.strokeStyle = "black"
     })
   })
-  p0x = 250
-  p0y = 30
-
-  p0x = 20
-  p0y = 250
-  prevColor = undefined
 }
 
 function nearestPosToMouse(x1, x2, y1, y2) {
